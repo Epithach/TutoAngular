@@ -28,7 +28,7 @@ export class HeroService {
   
  getHeroes(): Promise<Hero[]> {
 
-  var heroesFromAngularMemory = this.http.get(this.heroesUrl)
+  var heroes = this.http.get(this.heroesUrl)
   .toPromise()
   .then(response => response.json().data as Hero[])
   .catch(this.handleError);
